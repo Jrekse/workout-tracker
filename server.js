@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  process.env.MONGODB_URI || "mongodb://localhost/fathomless-wildwood", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -21,6 +21,6 @@ mongoose.connect(
 
 app.use(require("./routes/apiRoutes"));
 app.use(require('./routes/htmlRoutes'));
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`App running on port ${PORT}!`);
 });
