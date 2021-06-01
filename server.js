@@ -4,15 +4,13 @@ const logger = require('morgan');
 
 const PORT = process.env.PORT || 8080;
 
+const test = "";
+
 const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client/build'));
-// }
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/fitnessTracker", {
