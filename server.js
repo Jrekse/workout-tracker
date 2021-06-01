@@ -4,8 +4,6 @@ const logger = require('morgan');
 
 const PORT = process.env.PORT || 8080;
 
-const test = "";
-
 const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
